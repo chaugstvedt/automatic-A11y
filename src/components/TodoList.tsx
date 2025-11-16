@@ -1,24 +1,34 @@
-import { TodoItem } from './TodoItem'
-import { type Todo } from '../types'
+import React from 'react';
+import type { Todo } from '../types';
+import TodoItem from './TodoItem';
 
 interface TodoListProps {
   todos: Todo[];
-  markTodo: (index: number) => void;
-  removeTodo: (index: number) => void;
+  onToggle: (id: number) => void;
+  onDelete: (id: number) => void;
 }
 
-export const TodoList = ({todos, markTodo, removeTodo}: TodoListProps) => {
-  
+const TodoList: React.FC<TodoListProps> = ({ todos, onToggle, onDelete }) => {
+  if (todos.length === 0) {
     return (
-    <ul>
-      {todos.map((todo, index) => (
-        <TodoItem 
-            key={todo.text} 
-            todo={todo}
-            markTodo={ () => markTodo(index) }
-            removeTodo={ () => removeTodo(index) }
+      <div className="empty-state">
+        <p>No todos yet. Add one above! 📝</p>
+      </div>
+    );
+  }
+
+  return (
+    <ul className="todo-list">
+      {todos.map((todo) => (
+        <TodoItem
+          key={todo.id}
+          todo={todo}
+          onToggle={onToggle}
+          onDelete={onDelete}
         />
       ))}
     </ul>
-  )
-}
+  );
+};
+
+export default TodoList;

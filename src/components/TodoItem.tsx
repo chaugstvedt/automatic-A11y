@@ -1,21 +1,33 @@
- 
-import { type Todo } from '../types'
-
+import React from 'react';
+import type { Todo } from '../types';
 
 interface TodoItemProps {
   todo: Todo;
-  markTodo: () => void;
-  removeTodo: () => void;
+  onToggle: (id: number) => void;
+  onDelete: (id: number) => void;
 }
- 
- export const TodoItem = ({ todo, markTodo, removeTodo }: TodoItemProps) => {
+
+const TodoItem: React.FC<TodoItemProps> = ({ todo, onToggle, onDelete }) => {
   return (
-    <div className="todo">
-      <span style={{ textDecoration: todo.complete ? "line-through" : "" }}>{todo.text}</span>
-      <div>
-        <button className="outline-success" onClick={() => markTodo()}>✓</button>{' '}
-        <button className="outline-danger" onClick={() => removeTodo()}>✕</button>
+    <li className={`todo-item ${todo.completed ? 'completed' : ''}`}>
+      <div className="todo-content">
+        <input
+          type="checkbox"
+          checked={todo.completed}
+          onChange={() => onToggle(todo.id)}
+          className="todo-checkbox"
+        />
+        <span className="todo-text">{todo.text}</span>
       </div>
-    </div>
-  )
-} 
+      <button
+        onClick={() => onDelete(todo.id)}
+        className="delete-btn"
+        aria-label="Delete todo"
+      >
+        ✕
+      </button>
+    </li>
+  );
+};
+
+export default TodoItem;

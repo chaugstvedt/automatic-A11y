@@ -1,36 +1,36 @@
-import { type FormEvent, useState } from 'react'
-
+import React, { useState } from 'react';
 
 interface TodoFormProps {
-  onSubmit: (_todoTitle: string) => void
+  onAdd: (text: string) => void;
 }
 
-export const TodoForm = ({ onSubmit }: TodoFormProps) => {
-  const [title, setTitle] = useState<string>('')
+const TodoForm: React.FC<TodoFormProps> = ({ onAdd }) => {
+  const [text, setText] = useState('');
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const trimmed = title.trim()
-    if (trimmed) {
-      onSubmit(trimmed)
-      setTitle('')
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const trimmedText = text.trim();
+    if (trimmedText) {
+      onAdd(trimmedText);
+      setText('');
     }
-  }
+  };
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
-      <label>
-        Add Todo:
-        <input
-          aria-label="Write todo item"
-          type="text"
-          className="input"
-          value={title}
-          onChange={(e) => setTitle(e.currentTarget.value)}
-          placeholder="Add new todo"
-        />
-      </label>
-      <input type="submit" value="Submit" />
+    <form onSubmit={handleSubmit} className="todo-form">
+      <input
+        type="text"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        placeholder="What needs to be done?"
+        className="todo-input"
+        autoFocus
+      />
+      <button type="submit" className="add-btn">
+        Add Todo
+      </button>
     </form>
-  )
-}
+  );
+};
+
+export default TodoForm;
