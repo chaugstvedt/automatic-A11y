@@ -46,9 +46,6 @@ function App() {
       </main>
 
       <footer className="app-footer">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
         <p>This is an example app for accessibility testing. It is full of accessibility errors. Do not write apps like this!
         </p>
         <a

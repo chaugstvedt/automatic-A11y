@@ -26,7 +26,7 @@ const TodoForm: React.FC<TodoFormProps> = ({ onAdd }) => {
         className="todo-input"
         autoFocus
       />
-      <button type="submit" className="add-btn">
+      <button type="submit" className="add-button">
         Add Todo
       </button>
     </form>

@@ -21,6 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  padding: 2rem;
   color: white;
 }
 
@@ -29,7 +30,7 @@
 }
 
 .app-linkedin-link {
-  padding: 1.5em;
+  padding-left: 1.5em;
   width:40px; 
   height:40px;
 }
@@ -42,4 +43,47 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.add-button {
+  background-color: purple;
+  color: plum;
+  margin: 0.5rem 0.2rem;
+}
+
+.todo-checkbox {
+  background-color: purple;
+  color: plum;
+}
+
+.todo-delete {
+  background-color: purple;
+  color: plum;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin: 0.5rem 0; 
+  transition: border-color 0.2s ease;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: rgba(250, 198, 247, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.empty-state p {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #5a6c7d;
 }
