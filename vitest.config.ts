@@ -12,7 +12,7 @@ export default defineConfig({
     exclude: [
     ...configDefaults.exclude,
     'e2e/', 
-    'tests-examples/', 
+    'test-examples/', 
     ],
     globals: true,
   },

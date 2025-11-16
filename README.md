@@ -13,7 +13,7 @@ Mac or Unix: do nothing, git’s already installed
 I will use Visual Studio Code, feel free to use what you want
 https://code.visualstudio.com/
 
-## Getting started ##
+# Getting started 
 * Download and install Node.js. Instructions here: https://nodejs.org/
 * Clone project from Github: `git clone https://github.com/anneceh/automatic-A11y/`
 * cd into the project catalog: `cd automatic-A11y`
@@ -21,8 +21,9 @@ https://code.visualstudio.com/
 * Start the app with `npm run dev`
 
 
-## Part 0 - Semi-automatic testing with Google lighthouse
-* Open Chrome or Edge and go to a web page of choice
+# Part 0 - Semi-automatic testing with Google lighthouse
+* Start the app with `npm run dev`. The command line will give you the address where you can see the app running. 
+* Open Chrome or Edge and open the app 
 * Open developer tools
 Windows: Ctrl + Shift + I
 Mac: Command + Option + I
@@ -30,33 +31,30 @@ Mac: Command + Option + I
 * Answer the following: 
 * What is the accessibility score?
 * What kind of errors did the audit find?
-* What kind of errors did the audit not find? 
+* What kind of errors did the audit not find?  
 
-## Part 1 - Linting
-
-## Exercise 1 -  Run the example
-* start the app with `npm run dev`
-* How many accessibility errors are found by eslint? 
-
-## Part 2 - Unit Testing with Vitest-Axe / Jest-Axe
+# Part 1 - Unit Testing with Vitest-Axe / Jest-Axe
 
 Vitest-Axe is a fork of jest-axe. It shares that library's implementation and API. It is intended to make it easier to include its matchers without clashes between Vitest and Jest's environment or types.
 
-If you’re unable to get the project up and running, use the code pen instead: https://codepen.io/anneceh/pen/LJzbry
-
-## Exercise 2.1 -  Run the example
-* Start the app with `npm run dev`
-* In a new terminal: run the tests with `npm test`
+## Exercise 1.1 -  Run the unit tests
+* Run the unit tests with `npm test`
 * How many errors are found?
 
-## Exercise 2.2 - Change the configuration
-* Configure the tests to ignore the errors.  
-* Tip: read the jest-axe documentation https://github.com/nickcolley/jest-axe
+## Exercise 1.2 - Look at and change the configuration
+* Configure the unit tests to ignore the errors.   
+* Tip: read the section on Axe configuration in the jest-axe documentation https://github.com/nickcolley/jest-axe
 
-## Exercise 2.3 - Fix the errors
+## Exercise 1.3 - Fix the errors
 * Change the configuration back and fix the errors instead of ignoring them
 
-## Part 3 - Integration Testing with Playwright
+# Part 2 - Linting
+
+## Exercise 2.1 -  Run the linter
+* Run eslint with `npm run lint`
+* How many accessibility errors are found by eslint?
+
+# Part 3 - Integration Testing with Playwright
 
 ## Exercise 3.1 - Run the example
 * Open Playwright with `npx playwright test`

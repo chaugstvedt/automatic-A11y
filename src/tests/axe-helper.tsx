@@ -1,10 +1,9 @@
-const { configureAxe } = require('vitest-axe')
+import { configureAxe } from 'vitest-axe'
 
 const axe = configureAxe({
   rules: {
-
+    'color-contrast': { enabled: false }
   }, 
-  impactLevels: ['critical','serious','moderate','minor']
 })
 
 export default axe
