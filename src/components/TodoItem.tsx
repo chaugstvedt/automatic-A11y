@@ -22,7 +22,6 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, onToggle, onDelete }) => {
       <button
         onClick={() => onDelete(todo.id)}
         className="todo-delete"
-        aria-label="Delete todo"
       >
         ✕
       </button>

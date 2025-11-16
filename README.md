@@ -1,7 +1,7 @@
 # automatic-A11y - an example app for automatic accessibility testing with React + TypeScript + Vite
 
 Code used in Cecilie's Course Automatic Accessibility Testing for All
-Slides: https://docs.google.com/presentation/d/1-KI2xtE9_PpKIKh-YOoZbppbQQsGfOll2AKm0WtTlUI/edit?usp=sharing
+Slides: https://docs.google.com/presentation/d/1io8gfCs3O031-MCb6Y0UsjvWU70Ib7-FpjPcPxpWQ50/edit?usp=sharing
 
 
 ## Resources ##
@@ -56,9 +56,8 @@ Vitest-Axe is a fork of jest-axe. It shares that library's implementation and AP
 
 # Part 3 - Integration Testing with Playwright
 
-## Exercise 3.1 - Run the example
-* Open Playwright with `npx playwright test`
-* Run the tests
+## Exercise 3.1 - Run the integration tests
+* Run the Playwright tests with `npx playwright test`
 * Read more about the errors found at https://dequeuniversity.com/rules/axe/4.10/
 
 ## Exercise 3.2 - Change the configuration
@@ -66,7 +65,7 @@ Vitest-Axe is a fork of jest-axe. It shares that library's implementation and AP
 * Tip: read the documentation: https://playwright.dev/docs/accessibility-testing
 
 ## Exercise 3.3 Write your own test
-* Write your own test where you check accessibility, add a couple of todos and then check accessibility again. Look in the test-examples folder if you need help/inspiration for tests.
+* Write your own test where you check accessibility, add a couple of todos and then check accessibility again. Look at demo-todo-app.spec.ts if you need help/inspiration for tests.
 
 # Common errors #
 * You get code ENOENT when you run `npm install`
