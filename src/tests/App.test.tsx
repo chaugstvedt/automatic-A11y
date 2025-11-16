@@ -9,4 +9,3 @@ test('should not have any accessibility errors', async () => {
   const results = await axe(container)
 	expect(results).toHaveNoViolations()
 })
-
