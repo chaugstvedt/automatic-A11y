@@ -2,33 +2,35 @@ import { type FormEvent, useState } from 'react'
 
 
 interface TodoFormProps {
-  onSubmit: (todoTitle: string) => void
+  onSubmit: (_todoTitle: string) => void
 }
 
 export const TodoForm = ({ onSubmit }: TodoFormProps) => {
-  const [todoTitle, setTodoTitle] = useState("")
+  const [title, setTitle] = useState<string>('')
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    if (todoTitle.trim()) {
-      onSubmit(todoTitle.trim())
-      setTodoTitle("")
+    const trimmed = title.trim()
+    if (trimmed) {
+      onSubmit(trimmed)
+      setTitle('')
     }
   }
 
- return (
+  return (
     <form className="form" onSubmit={handleSubmit}>
       <label>
         Add Todo:
-        <input 
-            aria-label="Write todo item" 
-            type="text" 
-            className="input" 
-            value={todoTitle} 
-            onChange={(e) => setTodoTitle(e.target.value)}
-            placeholder="Add new todo" />
+        <input
+          aria-label="Write todo item"
+          type="text"
+          className="input"
+          value={title}
+          onChange={(e) => setTitle(e.currentTarget.value)}
+          placeholder="Add new todo"
+        />
       </label>
       <input type="submit" value="Submit" />
     </form>
   )
-} 
+}
