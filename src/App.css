@@ -6,13 +6,6 @@
   background-color: #282c34;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
 .card {
   padding: 2em;
 }
@@ -20,11 +13,6 @@
 .app {
   min-height: 100vh;
   text-align: center;
-}
-
-.app-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
 
 .app-header {
@@ -38,6 +26,12 @@
 
 .app-link {
   color: #045b73;
+}
+
+.app-linkedin-link {
+  padding: 1.5em;
+  width:40px; 
+  height:40px;
 }
 
 .input {

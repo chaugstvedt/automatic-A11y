@@ -3,7 +3,7 @@ import type { Todo } from './types';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 import './App.css';
-import reactLogo from './assets/react.svg'
+import linkedinLogo from './assets/linkedin-icon.png'
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -32,13 +32,12 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <h3>Todo TypeScript App</h3>
+        <h3>Todo TypeScript App 🦄</h3>
         <p>A simple todo app built with Vite + React + TypeScript</p>
       </header>
 
       <main className="app-main">
         <TodoForm onAdd={addTodo} />
-        <img src={reactLogo} className="app-logo"/>
         <TodoList
           todos={todos}
           onToggle={toggleTodo}
@@ -50,6 +49,8 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <p>This is an example app for accessibility testing. It is full of accessibility errors. Do not write apps like this!
+        </p>
         <a
           className="app-link"
           href="https://www.w3.org/TR/WCAG21/"
@@ -57,6 +58,9 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn WCAG 2.1
+        </a>
+        <a href="https://www.linkedin.com/in/chaugstvedt">
+          <img src={linkedinLogo} className="app-linkedin-link"/>
         </a>
       </footer>
     </div>
